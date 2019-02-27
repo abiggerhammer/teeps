@@ -12,9 +12,16 @@ Bootstrap(app)
 teep = ctx.socket(zmq.PUSH)
 teep.bind("tcp://*:6640")
 
+labels = []
+
 @app.route('/listen')
 def listen():
     return render_template('listen.html')    
+
+@app.route('/label')
+def label(label):
+    if label not in labels:
+        labels.append(label)
 
 @app.route('/say', methods=['POST'])
 def say(speaker=None, speech=None):
