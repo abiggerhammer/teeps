@@ -19,7 +19,7 @@ def listen():
     return render_template('listen.html')    
 
 @app.route('/label', methods=['POST'])
-def label(label):
+def claim_label(label=label):
     if label not in labels:
         labels.append(label)
 
