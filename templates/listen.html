@@ -8,17 +8,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </head>
   <body>
-    {% if not label %}
-    <div class="container">
-      <form method="POST" action="">
-	<div class="form-group row align-items-end">
-	  <label for="label">Give yourself a label:</label>
-	  <input type="text" class="form-control" id="label" name="label" />
-	  <button type="submit" class="btn btn-primary">Ok!</button>
-	</div>
-      </form>
-    </div>
-    {% else %}
+    {% if label %}
     <div class="container-fluid">
       <audio src="http://82.221.101.185:8000/teeps.ogg" autoplay="true" controls="false"></audio>
 
@@ -27,17 +17,29 @@
 	  Chat text
 	</div>
 	<div class="col-3" id="listeners">
+	  {% if listeners %}
 	  <ul id="listener_list">
 	    {% for listener in listeners %}
 	    <li>{{ listener|e }}</li>
 	    {% endfor %}
-	</ul>
+	  </ul>
+	  {% endif %}
 	</div>
       </div>
       <form class="form-inline" method="POST" action="/say">
 	<div class="form-group row align-items-end">
 	<input type="text" class="form-control" id="speech" />
 	<button type="submit" class="btn btn-primary">Say aloud</button>
+	</div>
+      </form>
+    </div>
+    {% else %}
+    <div class="container">
+      <form method="POST" action="">
+	<div class="form-group row align-items-end">
+	  <label for="label">Give yourself a label:</label>
+	  <input type="text" class="form-control" id="label" name="label" />
+	  <button type="submit" class="btn btn-primary">Ok!</button>
 	</div>
       </form>
     </div>
