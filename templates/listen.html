@@ -28,7 +28,7 @@
 	</div>
 	<div class="col-3" id="listeners">
 	  <ul id="listener_list">
-	    {% for listener in labels %}
+	    {% for listener in listeners %}
 	    <li>{{ listener|e }}</li>
 	    {% endfor %}
 	</ul>
@@ -40,7 +40,7 @@
 	<button type="submit" class="btn btn-primary">Say aloud</button>
 	</div>
       </form>
-    {% endif %}
     </div>
+    {% endif %}
   </body>
 </html>
