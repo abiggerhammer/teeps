@@ -8,17 +8,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="container-fluid">
     {% if not label %}
-    <form method="POST" action="/label">
-      <div class="form-group row align-items-end">
-	<label for="label">Give yourself a label:</label>
-	<input type="text" class="form-control" id="label" name="label" />
-	<button type="submit" class="btn btn-primary">Ok!</button>
-      </div>
-    </form>
+    <div class="container">
+      <form method="POST" action="/label">
+	<div class="form-group row align-items-end">
+	  <label for="label">Give yourself a label:</label>
+	  <input type="text" class="form-control" id="label" name="label" />
+	  <button type="submit" class="btn btn-primary">Ok!</button>
+	</div>
+      </form>
+    </div>
     {% else %}
-
+    <div class="container-fluid">
       <audio src="http://82.221.101.185:8000/teeps.ogg" autoplay="true" controls="false"></audio>
 
       <div class="row align-items-start" id="top">

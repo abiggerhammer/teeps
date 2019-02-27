@@ -14,7 +14,7 @@ teep.bind("tcp://*:6640")
 
 labels = []
 
-@app.route('/listen')
+@app.route('/')
 def listen():
     return render_template('listen.html')    
 
