@@ -8,7 +8,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </head>
   <body>
-    {% if label %}
+    {% if label is defined %}
     <div class="container-fluid">
       <audio src="http://82.221.101.185:8000/teeps.ogg" autoplay="true" controls="false"></audio>
 
@@ -17,7 +17,7 @@
 	  Chat text
 	</div>
 	<div class="col-3" id="listeners">
-	  {% if listeners %}
+	  {% if listeners is defined %}
 	  <ul id="listener_list">
 	    {% for listener in listeners %}
 	    <li>{{ listener|e }}</li>
