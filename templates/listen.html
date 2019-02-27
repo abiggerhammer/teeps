@@ -9,10 +9,10 @@
   </head>
   <body>
     {% if not label %}
-    <form class="form-inline" method="POST" action="/label">
-      <label for="label">Give yourself a label:</label>
+    <form method="POST" action="/label">
       <div class="form-group row align-items-end">
-	<input type="text" class="form-control" id="label" />
+	<label for="label">Give yourself a label:</label>
+	<input type="text" class="form-control" id="label" name="label" />
 	<button type="submit" class="btn btn-primary">Ok!</button>
       </div>
     </form>
