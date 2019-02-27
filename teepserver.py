@@ -14,11 +14,14 @@ teep.bind("tcp://*:6640")
 
 labels = []
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET', 'POST'])
 def listen(label=None):
-    if label not in labels:
-        labels.append(label)
-    return render_template('listen.html', label=label, listeners=labels)    
+    if request.method == 'GET':
+        return render_template('listen.html')
+    else:
+        if label not in labels:
+            labels.append(label)
+        return render_template('listen.html', label=label, listeners=labels)    
 
 #@app.route('/label', methods=['POST'])
 #def claim_label(label=None):
