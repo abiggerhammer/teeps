@@ -28,9 +28,9 @@
       </div>
       <form class="form-inline" method="POST" action="/say">
 	<div class="form-group row align-items-end">
-	  <input type="hidden" id="speaker">{{ listener }}</input>
-	  <input type="text" class="form-control" id="speech" />
-	  <button type="submit" class="btn btn-primary">Say aloud</button>
+	  <input type="hidden" id="speaker" name="speaker">{{ listener }}</input>
+	  <input type="text" class="form-control" id="speech" name="speech"/>
+	  <button type="submit" class="btn btn-primary">Say aoloud</button>
 	</div>
       </form>
     </div>
