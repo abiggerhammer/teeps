@@ -23,12 +23,6 @@ def listen(label=None):
             labels.append(label)
         return render_template('listen.html', label=label, listeners=labels)    
 
-#@app.route('/label', methods=['POST'])
-#def claim_label(label=None):
-#    if label not in labels:
-#        labels.append(label)
-#    return render_template('listen.html', label=label, listeners=labels)
-
 @app.route('/say', methods=['POST'])
 def say(speaker=None, speech=None):
     pass
