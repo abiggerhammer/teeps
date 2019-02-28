@@ -24,7 +24,7 @@ def listen(label=None):
         return render_template('listen.html', label=label, listeners=labels)    
 
 @app.route('/say', methods=['POST'])
-def say(speaker=None, speech=None):
+def say(speaker, speech):
     teep.send_string(speech.encode('utf-8'))
 
 # Socket to receive presence notifications/speech actions over
