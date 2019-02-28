@@ -25,7 +25,7 @@ def listen(label=None):
 
 @app.route('/say', methods=['POST'])
 def say(speaker=None, speech=None):
-    teep.send_string(speech)
+    teep.send_string(speech.encode('utf-8'))
 
 # Socket to receive presence notifications/speech actions over
 remote_pull = ctx.socket(zmq.PULL)
