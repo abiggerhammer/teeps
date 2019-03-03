@@ -1,0 +1,17 @@
+<icecast>
+  <hostname>localhost</hostname> <!-- This also works with avahi, e.g. yourhostname.local -->
+  <authentication>
+    <source-password>insecure</source-password>
+    <admin-user>admin</admin-user>
+    <admin-password>insecure</admin-password>
+  </authentication>
+  <listen-socket>
+    <port>8000</port>
+  </listen-socket>
+  <paths>
+    <logdir>./logs</logdir>
+    <pidfile>./icecast.pid</pidfile>
+    <webroot>./webroot</webroot>
+    <adminroot>./adminroot</adminroot>
+  </paths>
+</icecast>
